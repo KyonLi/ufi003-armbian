@@ -28,6 +28,7 @@ umount temp/dev
 umount temp/sys
 
 rm -rf temp/tmp/{*,.*} temp/root/.bash_history
+#dd if=/dev/zero of=armbian-ufi003.img bs=1M count=$(( $(du -ms temp | cut -f1) + 100 ))
 dd if=/dev/zero of=armbian-ufi003.img bs=1M count=$(( $(df -m --output=used temp | tail -1 | awk '{print $1}') + 100 ))
 mkfs.ext4 -L armbi_root -U $UUID armbian-ufi003.img
 mount armbian-ufi003.img build
