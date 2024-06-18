@@ -21,7 +21,7 @@ mount --bind /proc temp/proc
 mount --bind /dev temp/dev
 mount --bind /dev/pts temp/dev/pts
 mount --bind /sys temp/sys
-LANG=en_US.utf8 LC_ALL=en_US.utf8 chroot temp /tmp/chroot.sh
+LANGUAGE=en_US.utf8 LANG=en_US.utf8 LC_ALL=en_US.utf8 chroot temp /tmp/chroot.sh
 umount temp/proc
 umount temp/dev/pts
 umount temp/dev
